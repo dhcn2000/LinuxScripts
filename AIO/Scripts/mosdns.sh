@@ -117,7 +117,7 @@ mosdns_choose() {
         -)
             white "脚本切换中，请等待..."
             rm -rf /mnt/mosdns.sh    #delete       
-            wget -q -O /mnt/main_install.sh https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Scripts/main_install.sh && chmod +x /mnt/main_install.sh && /mnt/main_install.sh
+            wget -q -O /mnt/main_install.sh https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Scripts/main_install.sh && chmod +x /mnt/main_install.sh && /mnt/main_install.sh
             ;;                            
         *)
             white "无效的选项，1秒后返回当前菜单，请重新选择有效的选项."
@@ -130,7 +130,7 @@ mosdns_choose() {
 install_mosdns() {
     [ ! -d "/mnt/mosdns" ] && mkdir /mnt/mosdns
     cd /mnt/mosdns
-    local mosdns_host="https://github.com/IrineSistiana/mosdns/releases/download/v5.3.3/mosdns-linux-amd64.zip"
+    local mosdns_host="https://github.404cafe.fun/https://github.com/IrineSistiana/mosdns/releases/download/v5.3.3/mosdns-linux-amd64.zip"
     mosdns_customize_settings || exit 1
     basic_settings || exit 1
     download_mosdns || exit 1
@@ -182,7 +182,7 @@ install_mosdns_ui_all_chose_version() {
 install_mosdns_ui_all() {
     white "开始安装MosDNS ..."   
     [ ! -d "/mnt/mosdns" ] && mkdir /mnt/mosdns
-    local mosdns_host="https://github.com/IrineSistiana/mosdns/releases/download/v5.3.3/mosdns-linux-amd64.zip"
+    local mosdns_host="https://github.404cafe.fun/https://github.com/IrineSistiana/mosdns/releases/download/v5.3.3/mosdns-linux-amd64.zip"
     mosdns_customize_settings || exit 1
     basic_settings || exit 1
     download_mosdns || exit 1
@@ -452,14 +452,14 @@ configure_mosdns() {
     white "开始配置MosDNS规则..."
     mkdir /etc/mosdns/rule
     cd /etc/mosdns/rule
-    wget -q -O /etc/mosdns/rule/blocklist.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/blocklist.txt
-    wget -q -O /etc/mosdns/rule/localptr.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/localptr.txt
-    wget -q -O /etc/mosdns/rule/greylist.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/greylist.txt
-    wget -q -O /etc/mosdns/rule/whitelist.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/whitelist.txt
-    wget -q -O /etc/mosdns/rule/ddnslist.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/ddnslist.txt
-    wget -q -O /etc/mosdns/rule/hosts.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/hosts.txt
-    wget -q -O /etc/mosdns/rule/redirect.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/redirect.txt
-    wget -q -O /etc/mosdns/rule/adlist.txt https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/adlist.txt
+    wget -q -O /etc/mosdns/rule/blocklist.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/blocklist.txt
+    wget -q -O /etc/mosdns/rule/localptr.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/localptr.txt
+    wget -q -O /etc/mosdns/rule/greylist.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/greylist.txt
+    wget -q -O /etc/mosdns/rule/whitelist.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/whitelist.txt
+    wget -q -O /etc/mosdns/rule/ddnslist.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/ddnslist.txt
+    wget -q -O /etc/mosdns/rule/hosts.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/hosts.txt
+    wget -q -O /etc/mosdns/rule/redirect.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/redirect.txt
+    wget -q -O /etc/mosdns/rule/adlist.txt https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule/adlist.txt
     green "所有规则文件修改操作已完成"
     white "开始配置MosDNS config文件..."
     rm -rf /etc/mosdns/config.yaml
@@ -472,7 +472,7 @@ configure_mosdns() {
     white "开始配置定时更新规则与清理日志..."
     cd /etc/mosdns
     touch {geosite_cn,geoip_cn,geosite_geolocation_noncn,gfw}.txt
-    wget -q -O /etc/mosdns/mos_rule_update.sh https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mos_rule_update.sh
+    wget -q -O /etc/mosdns/mos_rule_update.sh https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mos_rule_update.sh
     chmod +x mos_rule_update.sh
     ./mos_rule_update.sh
     (crontab -l 2>/dev/null; echo "0 0 * * 0 sudo truncate -s 0 /etc/mosdns/mosdns.log && /etc/mosdns/mos_rule_update.sh") | crontab -
@@ -487,7 +487,7 @@ configure_mosdns_v4_v6_add() {
     else
         white "配置文件不存在，新建配置文件"
     fi
-    wget --quiet --show-progress -O /etc/mosdns/config.yaml https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/mosdns.yaml
+    wget --quiet --show-progress -O /etc/mosdns/config.yaml https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/mosdns.yaml
     sed -i "s|- addr: 10.10.10.2:5353  # 远程DNS服务器地址ipv4（sing-box IP地址）|- addr: ${uiport}:${sbport}  # 远程DNS服务器地址ipv4（sing-box IP地址）|g" /etc/mosdns/config.yaml
     sed -i "s|- addr: tcp://10.10.10.2:5353  # TCP协议的远程DNS服务器地址ipv4（sing-box IP地址）|- addr: tcp://${uiport}:${sbport}  # TCP协议的远程DNS服务器地址ipv4（sing-box IP地址）|g" /etc/mosdns/config.yaml
 
@@ -565,7 +565,7 @@ install_mosdns_ui_TO_Ovpavac() {
 install_loki() {
     white "开始安装Loki..."
     mkdir /mnt/ui && cd /mnt/ui
-    wget https://github.com/grafana/loki/releases/download/v3.1.0/loki_3.1.0_amd64.deb
+    wget https://github.404cafe.fun/https://github.com/grafana/loki/releases/download/v3.1.0/loki_3.1.0_amd64.deb
     dpkg -i loki_3.1.0_amd64.deb
     systemctl enable loki --now
     green "Loki已安装完成"
@@ -576,7 +576,7 @@ install_vector() {
     cd /mnt/ui
     curl --proto '=https' --tlsv1.2 -sSfL https://sh.vector.dev | bash -s -- -y
     rm -rf /root/.vector/config/vector.yaml
-    wget -q -O /root/.vector/config/vector.yaml https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/vector.yaml
+    wget -q -O /root/.vector/config/vector.yaml https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/vector.yaml
     cd /etc/systemd/system/
     touch vector.service
 cat << 'EOF' > vector.service
@@ -639,8 +639,8 @@ loki_install_Ovpavac() {
     white "开始下载并安装loki..."
     [ ! -d "/mnt/mosdnsui/loki" ] && mkdir -p "/mnt/mosdnsui/loki"
     cd /mnt/mosdnsui/loki
-    wget --quiet --show-progress https://raw.githubusercontent.com/grafana/loki/v3.1.0/cmd/loki/loki-local-config.yaml
-    wget --quiet --show-progress https://github.com/grafana/loki/releases/download/v3.1.0/loki_3.1.0_amd64.deb
+    wget --quiet --show-progress https://github.404cafe.fun/https://raw.githubusercontent.com/grafana/loki/v3.1.0/cmd/loki/loki-local-config.yaml
+    wget --quiet --show-progress https://github.404cafe.fun/https://github.com/grafana/loki/releases/download/v3.1.0/loki_3.1.0_amd64.deb
 
     dpkg -i loki_3.1.0_amd64.deb
     systemctl daemon-reload
@@ -670,7 +670,7 @@ vector_install_Ovpavac() {
     # 备份并清空 vector.yaml 文件
     [ -f "/etc/vector/vector.yaml" ] && cp "/etc/vector/vector.yaml" "/etc/vector/vector.yaml.bak_$(date +%F_%T)" && > "/etc/vector/vector.yaml"
 
-    wget --quiet --show-progress -O /etc/vector/vector.yaml https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/vector.yaml
+    wget --quiet --show-progress -O /etc/vector/vector.yaml https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/vector.yaml
     sed -i "s|/tmp/vector|/etc/vector/cache|g" /etc/vector/vector.yaml
     sed -i '/^Group=vector/a ExecStartPre=/bin/sleep 5' /lib/systemd/system/vector.service
 
@@ -692,7 +692,7 @@ prometheus_install_Ovpavac() {
     white "开始下载并安装prometheus..."
     [ ! -d "/mnt/mosdnsui/prometheus" ] && mkdir -p "/mnt/mosdnsui/prometheus"
     cd /mnt/mosdnsui/prometheus
-    wget --quiet --show-progress https://github.com/prometheus/prometheus/releases/download/v2.53.0/prometheus-2.53.0.linux-amd64.tar.gz
+    wget --quiet --show-progress https://github.404cafe.fun/https://github.com/prometheus/prometheus/releases/download/v2.53.0/prometheus-2.53.0.linux-amd64.tar.gz
 
     tar zxf prometheus-2.53.0.linux-amd64.tar.gz -C /mnt/mosdnsui/prometheus
     mv /mnt/mosdnsui/prometheus/prometheus-2.53.0.linux-amd64 /etc/prometheus
@@ -717,7 +717,7 @@ EOF
     # 备份并清空 prometheus.yml 文件
     [ -f "/etc/prometheus/prometheus.yml" ] && cp "/etc/prometheus/prometheus.yml" "/etc/prometheus/prometheus.yml.bak_$(date +%F_%T)" && > "/etc/prometheus/prometheus.yml"
  
-    wget --quiet --show-progress -O /etc/prometheus/prometheus.yml https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/prometheus.yml
+    wget --quiet --show-progress -O /etc/prometheus/prometheus.yml https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/prometheus.yml
 
     systemctl daemon-reload
     systemctl enable prometheus --now
@@ -768,7 +768,7 @@ update_mosdns() {
         mosdns version
         
         white "\n查询最新版本号，请稍候..."
-        LATEST_VERSION=$(curl -s https://github.com/IrineSistiana/mosdns/releases | grep -oP '\/IrineSistiana\/mosdns\/releases\/tag\/\K[^/"]+' | head -n 1)
+        LATEST_VERSION=$(curl -s https://github.404cafe.fun/https://github.com/IrineSistiana/mosdns/releases | grep -oP '\/IrineSistiana\/mosdns\/releases\/tag\/\K[^/"]+' | head -n 1)
         
         if [ -z "$LATEST_VERSION" ]; then
             red "未能获取到最新版本号，请检查网络或网址是否有效"
@@ -779,7 +779,7 @@ update_mosdns() {
         white "最新版本号为: ${yellow}$LATEST_VERSION${reset}"
     fi
 
-    mosdns_host="https://github.com/IrineSistiana/mosdns/releases/download/$LATEST_VERSION/mosdns-linux-amd64.zip"
+    mosdns_host="https://github.404cafe.fun/https://github.com/IrineSistiana/mosdns/releases/download/$LATEST_VERSION/mosdns-linux-amd64.zip"
 
     white "开始下载 mosdns ${yellow}$LATEST_VERSION${reset}"
     wget -q --show-progress "${mosdns_host}" || { red "下载失败！退出脚本"; exit 1; }
@@ -1202,7 +1202,7 @@ alidns_update_ip() {
         apt install jq -y
     fi
 
-    wget --quiet --show-progress -O /opt/alidns_ip_date/alidns_ip_update.sh https://raw.githubusercontent.com/feiye2021/LinuxScripts/main/AIO/Configs/mosdns/alidns_ip_update.sh
+    wget --quiet --show-progress -O /opt/alidns_ip_date/alidns_ip_update.sh https://github.404cafe.fun/https://raw.githubusercontent.com/dhcn2000/LinuxScripts/main/AIO/Configs/mosdns/alidns_ip_update.sh
 
     sed -i "s|https://www.baidu.com|${alidns_update_url}|g" /opt/alidns_ip_date/alidns_ip_update.sh
 
